@@ -51,11 +51,11 @@ public class OrderItem {
 	 
 	 return product.getName()
 			+", $"
-			+product.getPrice()
+			+String.format("%.2f", product.getPrice())
 			+", Quantity: "
 			+quantity
 			+", Subtotal: $"
-			+subTotal();
+			+String.format("%.2f",subTotal());
 	 
  }
 	
