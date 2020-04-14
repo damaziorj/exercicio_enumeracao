@@ -11,21 +11,20 @@ public class Order {
 
 	private Date moment;
 	private OrderStatus status;
+	
 	private Cliente client;
 	private List<OrderItem> items = new ArrayList<>();
     
 	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 	
-	public Order() {
+	
 
-	}
-
-	public Order(Date moment, OrderStatus satatus, Cliente client, List<OrderItem> item) {
+	public Order(Date moment, OrderStatus status, Cliente client) {
 
 		this.moment = moment;
-		this.status = satatus;
+		this.status = status;
 		this.client = client;
-		this.items = item;
+		
 	}
 
 	public Date getMoment() {
@@ -92,7 +91,7 @@ public class Order {
 		for (OrderItem item : items)
 		
 		{
-		sb.append(item);	
+		sb.append(item + "\n");	
 					
 		}
 		sb.append("Total price: $" +String.format("%.2f", total()));
